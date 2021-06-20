@@ -36,7 +36,7 @@
                                     <div class="container">
                                         <ul class="nav nav-pills" role="tablist">
                                             <li class="active"><a href="#mainTableHtml" role="tab" data-toggle="pill">User table</a></li>
-                                            <li><a href="#settings" role="tab" data-toggle="pill">New User</a></li>
+                                            <li><a href="#MainNewUser" role="tab" data-toggle="pill">New User</a></li>
                                         </ul>
                                         <div class="tab-content">
                                             <div role="tabpanel" class="tab-pane active fade in" id="mainTableHtml">
@@ -46,7 +46,7 @@
                                                 </div>
                                             </div>
         <!--  новый пользователь-->
-                                            <div role="tabpanel" class="tab-pane fade" id="settings">
+                                            <div role="tabpanel" class="tab-pane fade" id="MainNewUser">
 
 
                                                 <div class="container">
@@ -99,7 +99,11 @@
                                                         </div>
                                                         <br><br>
                                                         <div style="padding-left: 189px">
-                                                            <button type="submit" class="btn btn-success">Регистрация</button></div>
+                                                            <button type="submit" class="btn btn-success">
+                                                                <a href="" style="color: aliceblue">Регистрация</a>
+                                                            </button>
+                                                        </div>
+
                                                     </form>
                                                 </div>
                                             </div>
@@ -243,77 +247,79 @@
 <!--модальное окно для обновления-->
 <div>
     <div id="myModalEdit" class="modal fade" tabindex="-1">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button class="close" data-dismiss="modal">х</button>
-                    <h4 class="modal-title">Заголовок окна</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="container">
-                        <form role="form" class="form-horizontal">
-                            <div class="form-group">
-                                <label for="First NameD" class="control-label col-md-2">First Name</label>
-                                <div class="col-md-6">
-                                    <input type="email" class="form-control" id="First NameD" placeholder="введите имя">
-                                    <!--                <p class="help-block">Некая подсказка</p>-->
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="Last NameD" class="control-label col-md-2">Last Name</label>
-                                <div class="col-md-6">
-                                    <input type="password" class="form-control" id="Last NameD" placeholder="введите фамилию">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="AgeD" class="control-label col-md-2">Age</label>
-                                <div class="col-md-6">
-                                    <input type="email" class="form-control" id="AgeD" placeholder="введите возраст">
-                                    <!--                <p class="help-block">Некая подсказка</p>-->
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="EmailD" class="control-label col-md-2">Email</label>
-                                <div class="col-md-6">
-                                    <input type="email" class="form-control" id="EmailD" placeholder="введите email">
-                                    <!--                <p class="help-block">Некая подсказка</p>-->
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="PasswordD" class="control-label col-md-2">Password</label>
-                                <div class="col-md-6">
-                                    <input type="email" class="form-control" id="PasswordD" placeholder="введите пароль">
-                                    <!--                <p class="help-block">Некая подсказка</p>-->
-                                </div>
-                            </div>
-                            <div style="padding-left: 189px" class="col-md-6">
-                                <select class="form-control ">
-                                    <option>User</option>
-                                    <option>Admin</option>
-                                </select>
-                            </div>
-                            <br><br>
-                            <div style="padding-left: 189px">
-                                <button type="button" class="btn btn-success">Delete</button></div>
-                        </form>
-                    </div>
+        <div id="EditModal"></div>
+<!--        <div class="modal-dialog modal-lg">-->
+<!--            <div class="modal-content">-->
+<!--                <div class="modal-header">-->
+<!--                    <button class="close" data-dismiss="modal">х</button>-->
+<!--                    <h4 class="modal-title">Заголовок окна</h4>-->
+<!--                </div>-->
+<!--                <div class="modal-body">-->
+<!--                    <div class="container">-->
+<!--                        <form role="form" class="form-horizontal">-->
+<!--                            <div class="form-group">-->
+<!--                                <label for="First NameD" class="control-label col-md-2">First Name</label>-->
+<!--                                <div class="col-md-6">-->
+<!--                                    <input type="email" class="form-control" id="First NameD" placeholder="введите имя">-->
+<!--                                    &lt;!&ndash;                <p class="help-block">Некая подсказка</p>&ndash;&gt;-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="form-group">-->
+<!--                                <label for="Last NameD" class="control-label col-md-2">Last Name</label>-->
+<!--                                <div class="col-md-6">-->
+<!--                                    <input type="password" class="form-control" id="Last NameD" placeholder="введите фамилию">-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="form-group">-->
+<!--                                <label for="AgeD" class="control-label col-md-2">Age</label>-->
+<!--                                <div class="col-md-6">-->
+<!--                                    <input type="email" class="form-control" id="AgeD" placeholder="введите возраст">-->
+<!--                                    &lt;!&ndash;                <p class="help-block">Некая подсказка</p>&ndash;&gt;-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="form-group">-->
+<!--                                <label for="EmailD" class="control-label col-md-2">Email</label>-->
+<!--                                <div class="col-md-6">-->
+<!--                                    <input type="email" class="form-control" id="EmailD" placeholder="введите email">-->
+<!--                                    &lt;!&ndash;                <p class="help-block">Некая подсказка</p>&ndash;&gt;-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="form-group">-->
+<!--                                <label for="PasswordD" class="control-label col-md-2">Password</label>-->
+<!--                                <div class="col-md-6">-->
+<!--                                    <input type="email" class="form-control" id="PasswordD" placeholder="введите пароль">-->
+<!--                                    &lt;!&ndash;                <p class="help-block">Некая подсказка</p>&ndash;&gt;-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div style="padding-left: 189px" class="col-md-6">-->
+<!--                                <select class="form-control ">-->
+<!--                                    <option>User</option>-->
+<!--                                    <option>Admin</option>-->
+<!--                                </select>-->
+<!--                            </div>-->
+<!--                            <br><br>-->
+<!--                            <div style="padding-left: 189px">-->
+<!--                                <button type="button" class="btn btn-success">Edit</button></div>-->
+<!--                        </form>-->
+<!--                    </div>-->
 
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-danger" data-dismiss="modal">Закрыть</button>
-                </div>
-            </div>
-        </div>
+<!--                </div>-->
+<!--                <div class="modal-footer">-->
+<!--                    <button class="btn btn-danger" data-dismiss="modal">Закрыть</button>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
     </div>
 </div>
 
-
 <script src="mainTable.js"></script>
 <script src="mainNewUser.js"></script>
+<script src="editUser.js"></script>
 
 <!-- jQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
 </html>

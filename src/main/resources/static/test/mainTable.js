@@ -8,7 +8,7 @@ function fetchData() {
             return response.json();
         })
         .then(data => {
-            console.log(data);
+            // console.log(data);
             let html =  '<div class="container">\n' +
                 '           <div class="table-responsive table-">\n' +
                 '              <table class="table table-striped1 table-hover1 table-bordered1 table-condensed">\n' +
@@ -36,17 +36,20 @@ function fetchData() {
                        <td>${user.email}</td>
                        <td>Admin</td>
                        <td>
-                           <button class="btn btn-info" data-toggle="modal" data-target="#myModalEdit">Edit</button>
+                           <button id="MainEdit" value="testvalue" 
+                           onclick="getUserEdit(${user.id},'${user.firstName}','${user.lastName}',${user.age},'${user.email}')"
+                                    class="btn btn-info" data-toggle="modal" data-target="#myModalEdit">Edit</button>
                        </td>
                        <td>
-                           <button class="btn btn-warning" data-toggle="modal" data-target="#myModalDelete">Delete</button>
+                           <button id="MainDelete" value="value" 
+                                    class="btn btn-warning" data-toggle="modal" data-target="#myModalDelete">Delete</button>
                        </td>
                     </tr>
                     `;
                 })
                 .join("");
             // html = html;
-            console.log(html);
+            // console.log(html);
             document.querySelector("#mainTable").insertAdjacentHTML("afterbegin",html);
         })
         .catch(err => {
