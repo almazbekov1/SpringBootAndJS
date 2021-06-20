@@ -67,14 +67,14 @@ function getUserEdit(id, firstName, lastName, age, email) {
                             </div>
                             <br><br>
                             <div style="padding-left: 189px">
-                                <button type="submit" class="btn btn-success"  >Edit</button>
+                                <button type="submit" class="btn btn-success" onclick="MainRedirect()"  >Edit</button>
                             </div>
                         </form>
                     </div>
 
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-danger" data-dismiss="modal">Закрыть</button>
+                    <button class="btn btn-danger" data-dismiss="modal" onclick="MainRedirect()">Закрыть</button>
                 </div>
             </div>
         </div>
