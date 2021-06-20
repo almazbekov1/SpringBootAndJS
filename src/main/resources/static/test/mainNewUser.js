@@ -2,10 +2,8 @@
 const register = document.getElementById('MainRegister');
 
 let url = 'http://localhost:8080/admin/';
-console.log('test');
 register.addEventListener('submit',async function (event) {
     event.preventDefault()
-    console.log('test2');
 
     let email = document.getElementById('MainEmail').value;
     let password = document.getElementById('MainPassword').value;

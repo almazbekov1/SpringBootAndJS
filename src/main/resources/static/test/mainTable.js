@@ -36,12 +36,13 @@ function fetchData() {
                        <td>${user.email}</td>
                        <td>Admin</td>
                        <td>
-                           <button id="MainEdit" value="testvalue" 
+                           <button id="MainEdit" value="value" 
                            onclick="getUserEdit(${user.id},'${user.firstName}','${user.lastName}',${user.age},'${user.email}')"
                                     class="btn btn-info" data-toggle="modal" data-target="#myModalEdit">Edit</button>
                        </td>
                        <td>
                            <button id="MainDelete" value="value" 
+                           onclick="getUserDelete(${user.id},'${user.firstName}','${user.lastName}',${user.age},'${user.email}')"
                                     class="btn btn-warning" data-toggle="modal" data-target="#myModalDelete">Delete</button>
                        </td>
                     </tr>

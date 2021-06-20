@@ -22,10 +22,6 @@ public class AdminController {
     public List<User> getUsers(){
         return userRepo.findAll();
     }
-//    @GetMapping("/{id}")
-//    public User getUserById(@PathVariable Long id){
-//        return userRepo.getById(id);
-//    }
     @CrossOrigin
     @PostMapping
     public User addUser(@RequestBody User user){
@@ -42,26 +38,18 @@ public class AdminController {
         return userRepo.getById((long)id);
     }
     @CrossOrigin
-    @PutMapping
-    public User putUser(@RequestBody User user){
-        System.out.println("put mapping");
-        System.out.println(user.getLastName());
-        System.out.println(user.getFirstName());
-        System.out.println(user.getEmail());
-        System.out.println();
-
-        return userRepo.save(user);
-    }
-    @CrossOrigin
     @PutMapping("/{id}")
     public User putUserId(@PathVariable("id") int id,@RequestBody User user){
-        System.out.println("put mapping");
-        System.out.println("put id mapping");
-        System.out.println();
-        System.out.println();
-
         user.setId((long)id);
         return userRepo.save(user);
     }
+    @CrossOrigin
+    @DeleteMapping("/{id}")
+    public User deleteUser(@PathVariable("id") int id){
+        System.out.println("delete success user id: "+id);
+         userRepo.deleteById((long)id);
+         return userRepo.getById((long)id);
+    }
+
 
 }
